@@ -28,7 +28,7 @@ O objetivo principal deste projeto é fornecer uma ferramenta que ajude educador
 ## Estrutura do Projeto
 
 A estrutura do projeto é organizada da seguinte forma:
-
+```bash
 /calculadora_smi
 │
 ├── entradas/          # Arquivos de entrada (CSV)
@@ -38,23 +38,24 @@ A estrutura do projeto é organizada da seguinte forma:
 │   ├── Relevancia.csv
 │   └── Alunos.csv
 │
-├── saidas/           # Arquivos de saída
+├── saidas/             # Arquivos de saída
 │   └── resultados.csv
 │
-├── main.py           # Código principal da calculadora SMI
-└── README.md         # Este arquivo
-
+├── calculadora_msi.py           # Código principal da calculadora SMI
+└── README.md                    # Este arquivo
+````
 ## Como Usar
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/seu_usuario/seu_repositorio.git
+   git clone https://github.com/reginaldocandido/MMS-EDU.git
    cd seu_repositorio/calculadora_smi
 
 1. Instale as dependências:
 Certifique-se de ter o Python e o Pandas instalados. Você pode instalar as dependências necessárias com:
 
 pip install pandas
+pip install openpyxl
 
 2. Prepare os arquivos de entrada:
 
@@ -62,11 +63,11 @@ pip install pandas
 
 3. Execute a calculadora:
 
-python main.py
+python calculadora_msi.py
 
 4. Resultados:
 
-- Os resultados serão salvos na pasta saidas/ como resultados.csv.
+- Os resultados serão salvos na pasta saidas/ como Ranking_SMI_MMS-EDU.xlsx.
 
 Contribuições
 
@@ -74,10 +75,12 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull r
 
 Licença
 
-Este projeto está licenciado sob a MIT License - veja o arquivo LICENSE para mais detalhes.
+Este projeto está licenciado sob a 
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+Veja o arquivo LICENSE para mais detalhes.
 
 Contato
 
-Para mais informações, entre em contato com Reginaldo Donizeti Cândido através do e-mail: seu_email@example.com.
+Para mais informações, entre em contato com Reginaldo Donizeti Cândido através do e-mail: reginaldo.candido@etec.sp.gov.br.
 
 Sinta-se à vontade para personalizar o conteúdo, como o nome do repos
