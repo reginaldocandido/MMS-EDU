@@ -1,86 +1,89 @@
-# Método Baseado no Reconhecimento de Expressões Emocionais, Comportamentos e Objetos para Monitoramento de Segurança em Ambientes Educacionais
+# Calculadora de Ranking SMI para o Método MMS-EDU
+
+Este repositório contém o código-fonte da Calculadora de Ranking SMI, uma ferramenta desenvolvida como parte da dissertação de mestrado "Um Método Baseado no Reconhecimento de Expressões Emocionais, Comportamentos e Objetos para Monitoramento de Segurança em Ambientes Educacionais". A calculadora implementa o Índice de Monitoramento de Segurança (SMI) proposto no método MMS-EDU.
 
 ## Descrição
 
-Este repositório contém o projeto desenvolvido como parte da dissertação de Reginaldo Donizeti Cândido, que propõe um método inovador, denominado MMS-EDU, para monitoramento de segurança em ambientes educacionais. O método utiliza reconhecimento de expressões emocionais, análise de comportamentos e objetos para identificar situações de risco.
+A Calculadora de Ranking SMI é uma aplicação Python que permite simular o monitoramento de segurança em ambientes escolares, com base em três dimensões:
 
-## Objetivo
+*   **Expressões Emocionais (EE):** Detectadas por meio de algoritmos de reconhecimento facial.
+*   **Comportamentos Suspeitos (SB):** Identificados por meio de análise de vídeo.
+*   **Objetos Suspeitos (SO):** Detectados por meio de algoritmos de detecção de objetos.
 
-O objetivo principal deste projeto é fornecer uma ferramenta que ajude educadores e profissionais de segurança a monitorar e avaliar o comportamento dos alunos, promovendo um ambiente escolar mais seguro.
+A calculadora recebe dados de entrada (simulados ou provenientes de sistemas de visão computacional), aplica a equação do SMI e gera um ranking de indivíduos com base no seu nível de risco potencial.
 
-## Principais Tópicos da Dissertação
+## Estrutura do Repositório
+- **`calculadora_smi.py`**: Código principal da calculadora, que processa os arquivos CSV de entrada e calcula o SMI.
+- **`interface_simulacao.py`**: Código da interface gráfica para simulação, que permite inserir dados manualmente e visualizar os resultados.
+- **`entradas/`**: Pasta contendo os arquivos CSV de entrada (exemplos):
+  - `Alunos.csv`: Dados dos alunos (ID e nome).
+  - `EE.csv`: Dados de expressões emocionais.
+  - `SB.csv`: Dados de comportamentos suspeitos.
+  - `SO.csv`: Dados de objetos suspeitos.
+  - `Relevancia.csv`: Fatores de relevância.
+  - `Riscos.csv`: Tabela de mapeamento de riscos.
+- **`saidas/`**: Pasta onde são salvos os resultados (arquivos Excel).
+- **`requirements.txt`**: Lista de bibliotecas Python necessárias, com suas versões.
+- **`assets/`**: Contém o ícone da aplicação.
+- **`README.md`**: Este arquivo, que fornece informações sobre o projeto.
 
-1. **Introdução ao MMS-EDU**
-   - Apresentação do método e sua importância para a segurança em ambientes educacionais.
+## Pré-requisitos
 
-2. **Reconhecimento de Expressões Emocionais**
-   - Análise comparativa de softwares de reconhecimento de emoções e sua aplicação no contexto educacional.
+*   Python 3.7 ou superior.
+*   Bibliotecas Python listadas no arquivo `requirements.txt`.
 
-3. **Calculadora de Ranking SMI**
-   - Implementação de uma calculadora que avalia o Índice de Medida de Situação (SMI) com base em dados de diferentes dimensões (EE, SB, SO).
+## Instalação e Configuração
 
-4. **Simulações e Resultados**
-   - Descrição das simulações realizadas para validar o método e os resultados obtidos.
+1.  **Clone este repositório:**
+    ```bash
+    git clone <URL do repositório>
+    ```
+2.  **Crie um ambiente virtual Python (recomendado):**
+    ```bash
+    python3 -m venv venv  # Ou python -m venv venv, dependendo do seu sistema
+    ```
+3.  **Ative o ambiente virtual:**
+    ```bash
+    venv\Scripts\activate  # No Windows
+    source venv/bin/activate  # No Linux/macOS
+    ```
+4.  **Instale as bibliotecas necessárias:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-5. **Discussão e Conclusões**
-   - Reflexões sobre as implicações dos resultados e sugestões para trabalhos futuros.
+## Execução
 
-## Estrutura do Projeto
+### Usando a Interface Gráfica (Recomendado para Simulações)
 
-A estrutura do projeto é organizada da seguinte forma:
-```bash
-/calculadora_smi
-│
-├── entradas/          # Arquivos de entrada (CSV)
-│   ├── EE.csv
-│   ├── SB.csv
-│   ├── SO.csv
-│   ├── Relevancia.csv
-│   └── Alunos.csv
-│
-├── saidas/             # Arquivos de saída
-│   └── resultados.csv
-│
-├── calculadora_msi.py           # Código principal da calculadora SMI
-└── README.md                    # Este arquivo
-````
-## Como Usar
+1.  Execute o script `interface_simulacao.py`:
+    ```bash
+    python interface_simulacao.py
+    ```
+2.  Insira os dados na interface gráfica (ou carregue um arquivo CSV de exemplo).
+3.  Clique em "Salvar e Executar".
+4.  Os resultados serão salvos em um arquivo Excel na pasta `saidas/`.
 
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/reginaldocandido/MMS-EDU.git
-   cd seu_repositorio/calculadora_smi
+### Usando a Linha de Comando (Para Processar Arquivos CSV)
 
-1. Instale as dependências:
-Certifique-se de ter o Python e o Pandas instalados. Você pode instalar as dependências necessárias com:
+1.  Certifique-se de que os arquivos CSV de entrada estejam na pasta `entradas/`.
+2.  Execute o script `calculadora_smi.py`:
+    ```bash
+    python calculadora_smi.py
+    ```
+3.  Os resultados serão salvos em um arquivo Excel na pasta `saidas/`.
 
-pip install pandas
-pip install openpyxl
+## Contribuições
 
-2. Prepare os arquivos de entrada:
+Contribuições são bem-vindas! Se você encontrar algum problema ou tiver alguma sugestão, por favor, abra uma *issue* ou envie um *pull request*.
 
-- Certifique-se de que os arquivos CSV estão corretamente formatados e localizados na pasta entradas/.
 
-3. Execute a calculadora:
-
-python calculadora_msi.py
-
-4. Resultados:
-
-- Os resultados serão salvos na pasta saidas/ como Ranking_SMI_MMS-EDU.xlsx.
-
-Contribuições
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
-
-Licença
+## Licença
 
 Este projeto está licenciado sob a 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 Veja o arquivo LICENSE para mais detalhes.
 
-Contato
+## Contato
 
 Para mais informações, entre em contato com Reginaldo Donizeti Cândido através do e-mail: reginaldo.candido@etec.sp.gov.br.
-
-Sinta-se à vontade para personalizar o conteúdo, como o nome do repos
